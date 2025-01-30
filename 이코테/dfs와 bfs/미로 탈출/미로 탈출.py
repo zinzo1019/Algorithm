@@ -45,6 +45,6 @@ def bfs(x, y):
             graph[ny][nx] = graph[y][x] + 1
             # 새로운 탐색 기준 좌표 삽입
             queue.append((nx, ny))
-        print(graph[n - 1][m - 1])
+    print(graph[n - 1][m - 1])
 
 bfs(0, 0)
