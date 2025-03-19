@@ -1,21 +1,17 @@
 def solution(s):
     answer = True
-
-    count_open = 0
-    count_close = 0
+    stack_arr = []
 
     for i in s:
         if i == "(":
-            count_open += 1
-        else :
-            count_close += 1
+            stack_arr.append("(")
+        else:
+            try:
+                stack_arr.pop()
+            except IndexError:
+                answer = False
 
-        if count_open < count_close:
-            answer = False
-    
-    if count_open != count_close:
-        answer = False
-    if s[len(s)-1] != ")":
+    if len(stack_arr) > 0:
         answer = False
 
     return answer
